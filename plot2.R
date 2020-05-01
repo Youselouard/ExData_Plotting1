@@ -15,6 +15,6 @@ household_data$date <- as.Date(household_data$date, format = "%d/%m/%Y")
 household_data <- mutate(household_data, full_date = as.POSIXct(paste(date,time)))
 
 ## Plot the required graph
-png("plot2.png")
+png("plot2.png", width = 480, height = 480)
 with(household_data, plot(x= full_date, y=global_active_power, type="l",xlab = "", ylab = "Global Active Power (kilowatts)"))
 dev.off()

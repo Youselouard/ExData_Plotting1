@@ -15,7 +15,7 @@ household_data$date <- as.Date(household_data$date, format = "%d/%m/%Y")
 household_data <- mutate(household_data, full_date = as.POSIXct(paste(date,time)))
 
 ## Plot the required graph
-png("plot3.png")
+png("plot3.png", width = 480, height = 480)
 with(household_data, plot(x= full_date, y=sub_metering_1, type="l",xlab = "", ylab = "Energy sub metering"))
 with(household_data, lines(x = full_date, y=sub_metering_2, type="l", col="red"))
 with(household_data, lines(x = full_date, y=sub_metering_3, type="l", col="blue"))

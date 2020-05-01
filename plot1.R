@@ -12,7 +12,7 @@ household_data <- read.table("household_power_consumption.txt", sep = ";", skip 
 household_data$date <- as.Date(household_data$date, format = "%d/%m/%Y")
 
 ## Opening the png graphic device, constructing the histogram and closing the device
-png("plot1.png")
+png("plot1.png", width = 480, height = 480)
 hist(household_data$global_active_power, col="red", main="Global Active Power", 
      xlab= "Global Active Power (kilowatts)")
 dev.off()

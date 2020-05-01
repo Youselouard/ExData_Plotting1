@@ -15,7 +15,7 @@ household_data$date <- as.Date(household_data$date, format = "%d/%m/%Y")
 household_data <- mutate(household_data, full_date = as.POSIXct(paste(date,time)))
 
 ## Plot the required graph
-png("plot4.png")
+png("plot4.png", width = 480, height = 480)
 par(mfrow = c(2,2))
 with(household_data, plot(x= full_date, y=global_active_power, type="l",xlab = "", ylab = "Global active metering"))
 with(household_data, plot(x= full_date, y=voltage, type="l",xlab = "datetime", ylab = "Voltage"))
